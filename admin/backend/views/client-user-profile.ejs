@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/client-fileContainerCss') %>
+   
+  </head>
+  <body>
+  <%- include('partials/client-header') %>
+
+      <section class="form">
+          <div class="parallax parallax-profile mb-5"><%- data.username %></div>
+          <div class="container">
+              <div class="row">
+                  <h3>Manage Profile</h3>
+                  <form class="py-5" method="POST" action="">
+                        <div class="form-row row">
+                            <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12 d-flex  pr20add flex-column pl0add">
+                                <span class="input-title">Username*</span>
+                                <input type="text" name="username" size="20" placeholder="Flying monkey" class=""value="<%- data.username %>">
+                            </div>
+                        </div>
+                        <div class=" form-row row gender-dob">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column pr20add ">
+                                <span class="input-title">Sex*</span>
+                                <div class="gender-options d-flex justify-content-evenly">
+                                    <div class="d-flex align-items-center">
+                                        <input type="radio" class="button-check Gender" name="gender" value="Male" id="gender-btn1 male" autocomplete="off" checked>
+                                        <label class="radio-labels" for="gender-btn1">Male</label>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input type="radio" class="button-check Gender" name="gender"  value="Female" id="gender-btn2 female" autocomplete="off">
+                                        <label class="radio-labels" for="gender-btn2">Female</label>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input type="radio" class="button-check Gender" name="gender" id="gender-btn3 others" value="Others" autocomplete="off">
+                                        <label class="radio-labels" for="gender-btn3">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column pl20add">
+                                <span class="input-title">DOB*</span>
+                                <input type="date" placeholder="Date of Birth" class="" value=";a;a>" name="dob">
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-lg-12 col-sm-12 col-xs-12 d-flex flex-column pl0add">
+                                <span class="input-title">Email*</span>
+                                <input type="email" size="25"name="email" placeholder="Email Address" class="" required value="<%- data.email %>">
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-lg-12 col-sm-12 col-xs-12 d-flex flex-column ">
+                                <span class="input-title">Contact*</span>
+                                <input type="text" size="10" name="phone" placeholder="Contact" class="" value="<%- data.phone %>">
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-lg-6 col-md-6  col-sm-12 col-xs-12 d-flex  pr20add flex-column pl0add">
+                                <span class="input-title">Street*</span>
+                                <input type="text" name="streetAddress" size="20" placeholder="Random blue society" class="" value="<%- data.streetAddress %>">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  d-flex  pl20add flex-column">
+                                <span class="input-title">City*</span>
+                                <input type="text" size="20" name="city" placeholder="Ahmedabad" class="" required value="<%- data.city %>">
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-lg-6 col-md-6  col-sm-12 col-xs-12 d-flex  pr20add flex-column pl0add">
+                                <span class="input-title">District*</span>
+                                <input type="text" name="district" size="20" placeholder="Ahmedabad" class="" value="<%- data.district %>">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  d-flex  pl20add flex-column">
+                                <span class="input-title">State*</span>
+                                <input type="text" size="20" name="state" placeholder="Gujarat" class="" required value="<%- data.state %>">
+                            </div>
+                        </div>
+                        <div class="form-row row">
+                            <div class="col-lg-6 col-md-6  col-sm-12 col-xs-12 d-flex  pr20add flex-column pl0add">
+                                <span class="input-title">Country*</span>
+                                <input type="text" name="country" size="20" placeholder="India" class="" value="<%- data.country %>">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  d-flex  pl20add flex-column">
+                                <span class="input-title">Pin code*</span>
+                                <input type="text" size="20" name="pincode" placeholder="380015" class="" required value="<%- data.pincode %>">
+                            </div>
+                        </div>
+                        <div class="form-row mt-5">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit" class="signup" > save </button>
+                            </div>
+                        </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+      <%- include('partials/client-footer') %>
+  </body>
+  <%- include('partials/client-fileContainerJs') %>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-scompiler-id="0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>New FAQ</title>
+        <!-- icon -->
+        <%- include('partials/fileContainerCss.ejs')%>
+    </head>
+    <body>
+        <!-- sa-app -->
+        <div class="sa-app sa-app--desktop-sidebar-shown sa-app--mobile-sidebar-hidden sa-app--toolbar-fixed">
+            <!-- sa-app__sidebar -->
+            <%- include('partials/sidebar.ejs') %>.
+            <!-- sa-app__sidebar / end --><!-- sa-app__content -->
+            <div class="sa-app__content">
+                <!-- sa-app__toolbar -->
+                <%- include('partials/toolbar.ejs')%>
+                <!-- sa-app__toolbar / end --><!-- sa-app__body -->
+                <form method="POST" action="" class="new_faq_form">
+                  <div id="top" class="sa-app__body">
+                      <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
+                          <div class="container container--max--xl">
+                              <div class="py-5">
+                                  <div class="row g-4 align-items-center">
+                                      <div class="col">
+              
+                                          <h1 class="h3 m-0">Add new FAQ</h1>
+                                      </div>
+                                      <div class="col-auto d-flex"><a href="#" class="btn btn-secondary me-3">Duplicate</a><button type="submit" value="Submit"class="btn btn-primary">Save</button></div>
+                                  </div>
+                              </div>
+                              <div class="sa-entity-layout" data-sa-container-query='{"920":"sa-entity-layout--size--md","1100":"sa-entity-layout--size--lg"}'>
+                                  <div class="sa-entity-layout__body">
+                                      <div class="sa-entity-layout__main">
+                                          <div class="card">
+                                              <div class="card-body p-5">
+                                                  <div class="mb-4"><label for="form-FAQQuestion/question" class="form-label">Question</label><input type="text" class="form-control" id="FAQ/question" name="question"required />
+                                                  </div>                                               
+                                                  <div class="mb-4 ">
+                                                    <label for="form-FAQ/answer" class="form-label">Answer</label>
+                                                    <textarea id="form-faq/answer" class="sa-quill-control "name="answer" rows="8">
+                                                    </textarea>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      
+                                      </div>
+                                      <div class="sa-entity-layout__sidebar">
+                                          <div class="card w-100">
+                                              <div class="card-body p-5">
+                                                  <div class="mb-5"><h2 class="mb-0 fs-exact-18">Visibility</h2></div>
+                                                  <div class="mb-4 FAQ_visibility">
+                                                      <label class="form-check"><input type="radio" class="FAQ_Active form-check-input" name="isActive" value=true checked/><span class="form-check-label">Active</span></label>
+                                                      <label class="form-check"><input type="radio" class="FAQ_Inactive form-check-input" name="isActive" value=false  /><span class="form-check-label">Inactive</span></label>
+                                                  </div>
+                                                 
+                                              </div>
+                                          </div>
+                                        
+                                         
+                                      </div>    
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+                <!-- sa-app__body / end --><!-- sa-app__footer -->
+               <% include('partials/footer.ejs')%>
+                <!-- sa-app__footer / end -->
+            </div>
+
+            <!-- sa-app__content / end --><!-- sa-app__toasts -->
+            <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
+            <!-- sa-app__toasts / end -->
+        </div>
+        <!-- sa-app / end --><!-- scripts -->
+        <%- include('partials/fileContainerJs.ejs')%>
+    </body>
+</html>

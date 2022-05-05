@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <%- include('partials/client-fileContainerCss') %>
+
+
+    <!-- google font poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <%- include('partials/client-header') %>
+ 
+        <section>
+            <div class="conatiner-fluid">
+                <div class="faq-cover-img border d-flex align-items-center justify-content-center" style="background-image: url(/material/FAQ.jpg);">
+                    <h1>FAQ Page</h1>
+                </div>
+            </div>
+            <div class="conatiner-fluid">
+                <div class="container ">
+                    <div class="row my-4">
+                        <div class="col-md-3 col-sm-3 col-lg-3 my-3">
+                            <div class="faq-frequent">
+                                <div class="heading ">
+                                    <h3>Frequently asked questions</h3>
+                                </div>
+                                <div class="faq-frequent-desc">
+                                    <p>
+                                        Frequently asked question helps new buyers to make their first purchase
+                                    </p>
+                                </div>
+                                <div class="company-faqs ">
+                                    <ul class="">
+                                        <li><a href="faq.html"class="active_FAQ">Frequently asked questions</a></li>
+                                        <li><a href="paymentOptions.html">Payment Options</a></li>
+                                        <li><a href="Termsandcondition.html">Terms & Conditions</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="faq-search row mx-auto d-flex justify-content-center">
+
+                                <input type="search" class="col-md-9 col-sm-9 col-lg-9 " name="searchFAQ" id="search-faq" placeholder="Search..."> 
+                                
+                                <i class="search col-md-3  col-sm-3 col-lg-3 text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                  </svg>
+                                </i>
+
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-lg-1"></div>
+                        <div class="col-md-8 col-sm-8 col-lg-8 my-5">
+
+                            <div class="FAQ">
+                                <% for(let faq of FAQS) { %>
+                                <div class="faq-questions my-5">
+                                  
+                                    <div class="question my-4">
+                                        <h3><%- faq.question %></h3>
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            <%- faq.answer %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <% } %>
+
+                            </div>
+                            <div class="termsAndCondition">
+                                
+                            </div>
+                            
+                           
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%- include('partials/client-footer') %>
+      
+
+
+        <%- include('partials/client-fileContainerCss') %>
+
+</body>
+</html>

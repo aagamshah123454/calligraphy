@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-scompiler-id="0">
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-categories-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:08 GMT -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Category list</title>
+        <!-- icon -->
+        <%- include('partials/fileContainerCss') %>
+        <%- include('partials/reportCss') %>
+
+    </head>
+    <body>
+        <!-- sa-app -->
+        <div class="sa-app sa-app--desktop-sidebar-shown sa-app--mobile-sidebar-hidden sa-app--toolbar-fixed">
+            <!-- sa-app__sidebar -->
+                 <%- include('partials/sidebar.ejs')%>
+            <!-- sa-app__sidebar / end --><!-- sa-app__content -->
+            <div class="sa-app__content">
+                <!-- sa-app__toolbar -->
+                    <%- include('partials/toolbar.ejs')%>
+                <!-- sa-app__toolbar / end --><!-- sa-app__body -->
+                <div id="top" class="sa-app__body">
+                    <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
+                        <div class="container">
+                            <div class="py-5">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col">
+                                        <!-- <nav class="mb-2" aria-label="breadcrumb">
+                                            <ol class="breadcrumb breadcrumb-sa-simple">
+                                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Categories</li>
+                                            </ol>
+                                        </nav> -->
+                                        <h1 class="h3 m-0">Order report</h1>
+                                    </div>
+                                    <form action="" class="generateCat" method="post">
+                                    <div class="card">
+                                        <div class="card-body p-5">
+                                            <div class="mb-5"><h2 class="mb-0 fs-exact-18">category report</h2></div>
+                                            <div class="mb-4"><label for="form-category/name" class="form-label">Title</label><input type="text" value=""class="form-control pc" id="form-category/name" name="parentCategory"  required /><!--createSlug(this,'category_slug')-->
+                                            <p>
+                                                <small class="categoryNameAlert"style="color:red"></small>
+                                            </p>
+                                            </div>
+                                        <div class="mb-4">
+                                            <label  class="form-label">Visibility</label>
+                                            <label class="form-check"><input type="radio" class="form-check-input vi" name="categoryVisibility" value="Published" checked/><span class="form-check-label">Published</span></label>
+                                            <label class="form-check"><input type="radio" class="form-check-input vi" name="categoryVisibility" value="Scheduled"/><span class="form-check-label">Scheduled</span></label>
+                                            <label class="form-check mb-0"><input type="radio" class="form-check-input vi" name="categoryVisibility" value="Hidden" /><span class="form-check-label">Hidden</span></label>
+                                        </div>
+                                    <div class="col-auto d-flex"><a class="generate btn btn-primary" onClick="postData()">Generate</a></div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                              
+                            </div>
+                            <div class="card">
+                                <div class="sa-divider"></div>
+                                <table id="example" class="display nowrap" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Category Name</th>
+                                            <th>Parent Category</th>
+                                            <th>Visibility</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tablebody">
+                                       
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Category Name</th>
+                                            <th>Parent Category</th>
+                                            <th>Visibility</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sa-app__body / end --><!-- sa-app__footer -->
+                <%- include('partials/footer.ejs')%>
+                <!-- sa-app__footer / end -->
+            </div>
+            <!-- sa-app__content / end --><!-- sa-app__toasts -->
+            <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
+            <!-- sa-app__toasts / end -->
+        </div>
+        <!-- sa-app / end --><!-- scripts -->
+        <%- include('partials/fileContainerJs') %>
+        <%- include('partials/reportJs') %>
+        <script>
+function dt()
+{
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        destroy: true,
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+    } );
+}
+dt();
+
+// POST request using fetch()
+function postData(){
+    // POST request using fetch()
+    let parentCategory = document.querySelector(".pc").value
+    let vi
+    var radios = document.getElementsByName('categoryVisibility');
+    for (var radio of radios)
+    {
+        if (radio.checked) {
+            vi=radio.value;
+        }
+    }
+fetch("/admin/report/category", {
+
+     // Adding method type
+     method: "POST",
+      
+     // Adding body or contents to send
+     body: JSON.stringify({
+         parentCategory:parentCategory ,
+         categoryVisibility:vi,
+  
+     }),
+
+     headers: {
+         "Content-type": "application/json; charset=UTF-8"
+     }
+ })
+  
+ // Converting to JSON
+ .then(response => response.json())
+.then(result => {
+    let a;
+for(let tr of result)
+{
+     a=a+`<tr><td>${tr._id}</td>`+`<td>${tr.name}</td>`+`<td>${tr.parentCategory}</td>`+`<td>${tr.visibility.visibility_type}</td></tr>`
+}
+if ($.fn.dataTable.isDataTable('#example')) {
+        $('#example').DataTable().destroy();
+    }
+document.querySelector(".tablebody").innerHTML =a;
+dt();
+  console.log('Success:', result);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+}
+
+        </script>
+
+    </body>
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-categories-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:08 GMT -->
+</html>

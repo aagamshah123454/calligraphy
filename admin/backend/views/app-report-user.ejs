@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-scompiler-id="0">
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-categories-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:08 GMT -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Category list</title>
+        <!-- icon -->
+        <%- include('partials/fileContainerCss') %>
+        <%- include('partials/reportCss') %>
+
+    </head>
+    <body>
+        <!-- sa-app -->
+        <div class="sa-app sa-app--desktop-sidebar-shown sa-app--mobile-sidebar-hidden sa-app--toolbar-fixed">
+            <!-- sa-app__sidebar -->
+                 <%- include('partials/sidebar.ejs')%>
+            <!-- sa-app__sidebar / end --><!-- sa-app__content -->
+            <div class="sa-app__content">
+                <!-- sa-app__toolbar -->
+                    <%- include('partials/toolbar.ejs')%>
+                <!-- sa-app__toolbar / end --><!-- sa-app__body -->
+                <div id="top" class="sa-app__body">
+                    <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
+                        <div class="container">
+                            <div class="py-5">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col">
+                                        <!-- <nav class="mb-2" aria-label="breadcrumb">
+                                            <ol class="breadcrumb breadcrumb-sa-simple">
+                                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Categories</li>
+                                            </ol>
+                                        </nav> -->
+                                        <h1 class="h3 m-0">User</h1>
+                                    </div>
+                                    <form action="" class="generateUser" method="post">
+                                    <div class="card">
+                                        <div class="card-body p-5">
+                                            <div class="mb-5"><h2 class="mb-0 fs-exact-18">User report</h2></div>
+                                            <div class="mb-4"><label for="form-category/name" class="form-label">Gender</label><input type="text" value=""class="form-control gender" id="form-category/name" name="gender"  required /><!--createSlug(this,'category_slug')-->
+                                            <div class="mb-4"><label for="form-category/name" class="form-label">Country</label><input type="text" value=""class="form-control country" id="form-category/name" name="country"  required /><!--createSlug(this,'category_slug')-->
+                                            <div class="mb-4"><label for="form-category/name" class="form-label">State</label><input type="text" value=""class="form-control state" id="form-category/name" name="state"  required /><!--createSlug(this,'category_slug')-->
+                                            <div class="mb-4"><label for="form-category/name" class="form-label">City</label><input type="text" value=""class="form-control city" id="form-category/name" name="city"  required /><!--createSlug(this,'category_slug')-->
+                                    </div>
+                                       
+                                    <div class="col-auto d-flex"><a class="generate btn btn-primary" onClick="postData()">Generate</a></div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                              
+                            </div>
+                            <div class="card">
+                                <div class="sa-divider"></div>
+                                <table id="example" class="display nowrap" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Country</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tablebody">
+                                       
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Country</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sa-app__body / end --><!-- sa-app__footer -->
+                <%- include('partials/footer.ejs')%>
+                <!-- sa-app__footer / end -->
+            </div>
+            <!-- sa-app__content / end --><!-- sa-app__toasts -->
+            <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
+            <!-- sa-app__toasts / end -->
+        </div>
+        <!-- sa-app / end --><!-- scripts -->
+        <%- include('partials/fileContainerJs') %>
+        <%- include('partials/reportJs') %>
+        <script>
+function dt()
+{
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        destroy: true,
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+    } );
+}
+dt();
+
+// POST request using fetch()
+function postData(){
+    // POST request using fetch()
+    let gender = document.querySelector('.gender').value
+    let country = document.querySelector('.country').value
+    let city = document.querySelector('.city').value
+    let state = document.querySelector('.state').value
+
+
+fetch("/admin/report/user", {
+
+     // Adding method type
+     method: "POST",
+      
+     // Adding body or contents to send
+     body: JSON.stringify({
+         gender:gender ,
+         country:country,
+         state:state,
+         city:city
+     }),
+     headers: {
+         "Content-type": "application/json; charset=UTF-8"
+     }
+ })
+  
+ // Converting to JSON
+ .then(response => response.json())
+.then(result => {
+    let a;
+for(let tr of result)
+{
+     a=a+`<tr><td>${tr._id}</td>`+`<td>${tr.username}</td>`+`<td>${tr.email}</td>`+`<td>${tr.city}</td><td>${tr.state}</td><td>${tr.country}</td></tr>`
+}
+if ($.fn.dataTable.isDataTable('#example')) {
+        $('#example').DataTable().destroy();
+    }
+document.querySelector(".tablebody").innerHTML =a;
+dt();
+  console.log('Success:', result);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+}
+
+        </script>
+
+    </body>
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-categories-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:08 GMT -->
+</html>

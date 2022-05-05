@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-scompiler-id="0">
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-analytics.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:24 GMT -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Analytics</title>
+        <!-- icon -->
+        <%- include('partials/fileContainerCss') %>
+
+    </head>
+    <body>
+        <!-- sa-app -->
+        <div class="sa-app sa-app--desktop-sidebar-shown sa-app--mobile-sidebar-hidden sa-app--toolbar-fixed">
+            <!-- sa-app__sidebar -->
+            <%- include('partials/sidebar') %>
+            <!-- sa-app__sidebar / end --><!-- sa-app__content -->
+            <div class="sa-app__content">
+                <!-- sa-app__toolbar -->
+                <%- include('partials/toolbar') %>
+                <!-- sa-app__toolbar / end --><!-- sa-app__body -->
+                <div id="top" class="sa-app__body">
+                    <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
+                        <div class="container">
+                            <div class="py-5">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col">
+                                      
+                                        <h1 class="h3 m-0">Analytics</h1>
+                                    </div>
+                                    <div class="col-auto d-flex"><a href="#" class="btn btn-secondary me-3">Export</a><a href="#" class="btn btn-primary">Save</a></div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="sa-chart-toolbar mb-5 mt-n2">
+                                        <div class="sa-chart-toolbar__body">
+                                            <div class="sa-chart-toolbar__item me-auto">
+                                                <label for="analytics/date-range" class="sa-chart-toolbar__item-label">Date range</label>
+                                                <select id="analytics/date-range" class="form-select form-select-sm sa-chart-toolbar__item-select">
+                                                    <option>Current month</option>
+                                                    <option selected="">Current year</option>
+                                                    <option>Last year</option>
+                                                    <option>[Custom]</option>
+                                                </select>
+                                                <div class="sa-chart-toolbar__item-range">
+                                                    <input type="text" class="form-control form-control-sm datepicker-here" placeholder="Start date" data-auto-close="true" data-language="en" aria-label="Datepicker" />
+                                                    <div class="text-muted mx-3"><div class="sa-dash sa-dash--size--small"></div></div>
+                                                    <input type="text" class="form-control form-control-sm datepicker-here" placeholder="End date" data-auto-close="true" data-language="en" aria-label="Datepicker" />
+                                                </div>
+                                            </div>
+                                            <div class="sa-chart-toolbar__item">
+                                                <label for="analytics/group-by" class="sa-chart-toolbar__item-label">Group by</label>
+                                                <select id="analytics/group-by" class="form-select form-select-sm">
+                                                    <option selected="">Day</option>
+                                                    <option>Month</option>
+                                                    <option>Year</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sa-box" data-sa-container-query='{"320":"sa-box--aspect-ratio--3:2","640":"sa-box--aspect-ratio--2:1","1080":"sa-box--aspect-ratio--3:1"}' data-sa-container-query-mode="bigger">
+                                        <div class="sa-box__body">
+                                            <div class="sa-box__container"><canvas id="example-chart-js-analytics"></canvas></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- sa-app__body / end --><!-- sa-app__footer -->
+                <%- include('partials/fileContainerJs') %>
+
+                <!-- sa-app__footer / end -->
+            </div>
+            <!-- sa-app__content / end --><!-- sa-app__toasts -->
+            <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
+            <!-- sa-app__toasts / end -->
+        </div>
+        <!-- sa-app / end --><!-- scripts -->
+        <%- include('partials/filecontainerJs') %>
+    </body>
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-analytics.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:24 GMT -->
+</html>

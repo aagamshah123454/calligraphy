@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Page</title>
+
+    <%- include('partials/client-fileContainerCss') %>
+
+
+</head>
+<body>
+  <%- include('partials/client-header') %>
+
+    <section class="products_Container">
+        <div class="container-fluid">
+          <div class="container product-collection">
+            <div class="row  nobr">
+              <ul class="subcat_ul">
+                <p>All  |</p>
+                <% for(let subcategory of subcategories) { %>
+                <li><a href=""><%- subcategory.name %></a></li>
+                  <% } %>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-lg-9 col-md-9 col-sm-9 ">
+                  <div class="row product_row">
+                    
+                    <% for(let product of products) { %>
+                     
+                      <div class="col-lg-3 col-md-3 col-sm-3 product_padding">
+                        <div class="product_information">
+                          <div class="wsk-cp-product">
+                            <div class="wsk-cp-img">
+                              <img class="img-fluid"src="<%- imageURL %><%- product.image[0].imagePath %>">
+                            </div>
+                            <div class="productInformation p10">
+                              <h6 class="productBrandsName"><%- product.brands %></h6>
+                              <a href="<%- categoryActive.name %>/<%- product.id %> "> <h6 class="productName"><%- product.title %></h6></a>
+                              <!-- <div class="productPrice d-flex">
+                                <h5 class="newPrice">₹190</h5>
+                                <h5 class="oldPrice pl20">₹900</h5>
+                                <h5 class="discountPercentage pl20">85%</h5>
+                              </div> -->
+                         
+  
+  
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <% } %>
+               
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 mt10 mb10 desktop-filter">
+                <section id="sidebar">
+                    <div>
+                        <h6 class="p-1 border-bottom">Categories</h6>
+                        <ul>
+                          <li class="active"><a href="#"><%- categoryActive.name %></a></li>
+                            <% for(let category of categories) { %>
+                            <li><a href="#"><%- category.name%></a></li>
+                              <% } %>
+                        </ul>
+                    </div>
+                    <div>
+                      <h6 class="my-2">Price</h6>
+                  
+                        <div class="price">
+    <input type="range" class="form-range" id="customRange1">
+                        </div>
+                    <div>
+                        <h6 class="p-1 border-bottom">Filter By</h6>
+                        <h6 class="mb-2">Color</h6>
+                        <div class="card">
+                          <div class="check__item">
+                            <% for(let color of colors) { %>
+                              <label>
+                                <input type="checkbox" class="default__check">
+                                <span class="custom__check"></span>
+                               <%- color.color_name %>
+                              </label>
+                                <% } %>
+                           
+                                                     </div>
+                        </div>
+                    </div>
+                    <div>
+                      <h6 class="my-2">Size</h6>
+                      <div class="card">
+                        <div class="check__item">
+                          <% for(let size of sizes) { %>
+                            <label>
+                              <input type="checkbox" class="default__check">
+                              <span class="custom__check"></span>
+                             <%- size.size %>
+                            </label>
+                              <% } %>
+
+                        </div>
+                      </div>
+                  </div>
+                    <div>
+                      <h6 class="my-2">Material</h6>
+                      <div class="card">
+                        <div class="check__item">
+                          <% for(let material of materials) { %>
+                            <label>
+                              <input type="checkbox" class="default__check">
+                              <span class="custom__check"></span>
+                             <%- material.materialName %>
+                            </label>
+                              <% } %>
+                        </div>
+                      </div>
+                  </div>
+               
+                 
+                </div>
+                    
+                   
+                </section>
+              </div>
+              
+              </div>
+            </div>
+          </div>
+           
+        </div>
+    </section>
+<%- include('partials/client-footer') %>
+  
+</body>
+<%- include('partials/client-fileContainerJs') %>
+
+</html>

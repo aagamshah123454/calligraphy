@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>empty cart</title>
+    <%- include('partials/client-fileContainerCss') %>
+
+</head>
+<body>
+    <%- include('partials/client-header') %>
+
+    <section class="container-fluid removing_padding_from_fluid">
+        <div class="parallax parallax-cart">Your cart</div>
+        
+<div class="container">
+    <div class="shopping-cart">
+
+        <div class="row column-labels bordee">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 column-labels">
+                <label class="product-image">Image</label>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 column-labels">
+                <label class="product-details">Product</label>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 column-labels">
+                <label class="product-price">Price</label>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 column-labels">
+                <label class="product-quantity">Quantity</label>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 column-labels">
+                <label class="product-removal">Remove</label>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 column-labels">
+                <label class="product-line-price">Total</label>
+            </div>
+        </div>
+        <div class="row pok">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 product">
+                <div class="product-image">
+                    <img src="/New folder/frame-14.jpeg">
+                  </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 product">
+                <div class="product-details">
+                    <div class="product-title">Hello calligraphy frame</div>
+                    <p class="product-description">Hello word is always been very welcoming to the people and these word is so common that it is used by almost every one and this words helps for the communication with the strangers </p>
+                  </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 product">
+                <div class="product-price">12.99</div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 product">
+                <div class="product-quantity">
+                    <input type="number" value="2" min="1">
+                  </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 product">
+                <div class="product-removal">
+                    <button class="remove-product">
+                      Remove
+                    </button>
+                  </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 product">
+                <div class="product-line-price">25.98</div>
+            </div>
+        </div>
+        <div class="row pok">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 product">
+                <div class="product-image">
+                    <img src="/New folder/frame-20.jpeg">
+                  </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 product">
+                <div class="product-details">
+                    <div class="product-title">Good vibes only calligrahpy frame</div>
+                    <p class="product-description">Good vibes frame , this frame you can buy and put it on their desk because it is very important to get good vibes in this modern era where many people are suffering from anxiety and depression so possible this frame can give you some good vibe</p>
+                  </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 product">
+                <div class="product-price">12.99</div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 product">
+                <div class="product-quantity">
+                    <input type="number" value="2" min="1">
+                  </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 product">
+                <div class="product-removal">
+                    <button class="remove-product">
+                      Remove
+                    </button>
+                  </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 product">
+                <div class="product-line-price">25.98</div>
+            </div>
+        </div>
+        
+       
+      
+        <div class="totals">
+          <div class="totals-item">
+            <label>Subtotal</label>
+            <div class="totals-value" id="cart-subtotal">71.97</div>
+          </div>
+          <div class="totals-item">
+            <label>Tax (5%)</label>
+            <div class="totals-value" id="cart-tax">3.60</div>
+          </div>
+          <div class="totals-item">
+            <label>Shipping</label>
+            <div class="totals-value" id="cart-shipping">15.00</div>
+          </div>
+          <div class="totals-item totals-item-total">
+            <label>Grand Total</label>
+            <div class="totals-value" id="cart-total">90.57</div>
+          </div>
+        </div>
+            
+            <button class="checkout">Checkout</button>
+      
+      </div>
+</div>
+
+        
+          
+    </section>
+ 
+
+</body>
+<%- include('partials/client-fileContainerCss') %>
+
+<script>
+    /* Set rates + misc */
+
+</script>
+
+</html>

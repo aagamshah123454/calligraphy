@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-scompiler-id="0">
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-customer.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:13 GMT -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>customer</title>
+        <!-- icon -->
+        <%- include('partials/fileContainerCss.ejs') %>
+    </head>
+    <body>
+        <!-- sa-app -->
+        <div class="sa-app sa-app--desktop-sidebar-shown sa-app--mobile-sidebar-hidden sa-app--toolbar-fixed">
+            <!-- sa-app__sidebar -->
+            <%- include('partials/sidebar.ejs') %>
+
+            <!-- sa-app__sidebar / end --><!-- sa-app__content -->
+            <div class="sa-app__content">
+                <!-- sa-app__toolbar -->
+                <%- include('partials/toolbar.ejs')%>
+
+                <!-- sa-app__toolbar / end --><!-- sa-app__body -->
+                <div id="top" class="sa-app__body">
+                    <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
+                        <div class="container container--max--xl">
+                            <div class="py-5">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col">
+                                       
+                                        <h1 class="h3 m-0"><%- customer.username %></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sa-entity-layout" data-sa-container-query='{"920":"sa-entity-layout--size--md"}'>
+                                <div class="sa-entity-layout__body">
+                                    <div class="sa-entity-layout__sidebar">
+                                        <div class="card">
+                                            <div class="card-body d-flex flex-column align-items-center">
+                                                <div class="pt-3">
+                                                    <div class="sa-symbol sa-symbol--shape--circle" style="--sa-symbol--size: 6rem;"><img src="" width="96" height="96" alt="" /></div>
+                                                </div>
+                                                <div class="text-center mt-4">
+                                                    <div class="fs-exact-16 fw-medium"><%- customer.username %></div>
+                                                    <div class="fs-exact-13 text-muted">
+                                                        <div class="mt-1"><a href="#"><%- customer.email %></a></div>
+                                                        <div class="mt-1"><%- customer.phone %></div>
+                                                    </div>
+                                                </div>
+                                                <div class="sa-divider my-5"></div>
+                                                <div class="w-100">
+                                                    <dl class="list-unstyled m-0">
+                                                        <dt class="fs-exact-14 fw-medium">Last Order</dt>
+                                                        <dd class="fs-exact-13 text-muted mb-0 mt-1">7 days ago – <a href="app-order.html">#80294</a></dd>
+                                                    </dl>
+                                                    <dl class="list-unstyled m-0 mt-4">
+                                                        <dt class="fs-exact-14 fw-medium">Average Order Value</dt>
+                                                        <dd class="fs-exact-13 text-muted mb-0 mt-1">$574.00</dd>
+                                                    </dl>
+                                                    <dl class="list-unstyled m-0 mt-4">
+                                                        <dt class="fs-exact-14 fw-medium">Registered</dt>
+                                                        <dd class="fs-exact-13 text-muted mb-0 mt-1">2 months ago</dd>
+                                                    </dl>
+                                                    <dl class="list-unstyled m-0 mt-4">
+                                                        <dt class="fs-exact-14 fw-medium">Email Marketing</dt>
+                                                        <dd class="fs-exact-13 text-muted mb-0 mt-1">Subscribed</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sa-entity-layout__main customer_detail_layout ">
+                                        <div class="card mt-5">
+                                            <div class="card-body px-5 py-4 d-flex align-items-center justify-content-between">
+                                                <h2 class="mb-0 fs-exact-18 me-4">Orders</h2>
+                                                <div class="text-muted fs-exact-14 text-end">Total spent $34,980.34 on 7 orders</div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="sa-table text-nowrap">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="app-order.html">#80294</a></td>
+                                                            <td>Today at 6:10 pm</td>
+                                                            <td>Pending</td>
+                                                            <td>4 items</td>
+                                                            <td>$320.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="sa-divider"></div>
+                                            <div class="px-5 py-4 text-center"><a href="app-orders-list.html">View all 7 orders</a></div>
+                                        </div>
+                                        <div class="card mt-5">
+                                            <div class="card-body px-5 py-4 d-flex align-items-center justify-content-between">
+                                                <h2 class="mb-0 fs-exact-18 me-4">Addresses</h2>
+                                            </div>
+                                            <div class="sa-divider"></div>
+                                            <div class="px-5 py-3 my-2 d-flex align-items-center justify-content-between">
+                                                <div>
+                                                    <div><%- customer.username %></div>
+                                                    <div class="text-muted fs-exact-14 mt-1"><%- customer.streetAddress %>, <%- customer.city %>, <%- customer.phone %> </div>
+                                                </div>
+                                                <div>
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="sa-divider"></div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sa-app__body / end --><!-- sa-app__footer -->
+                <% include('partials/footer.ejs')%>
+                
+                <!-- sa-app__footer / end -->
+            </div>
+            <!-- sa-app__content / end --><!-- sa-app__toasts -->
+            <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
+            <!-- sa-app__toasts / end -->
+        </div>
+        <!-- sa-app / end --><!-- scripts -->
+        <%- include('partials/fileContainerJs.ejs') %>
+    </body>
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-customer.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:13 GMT -->
+</html>

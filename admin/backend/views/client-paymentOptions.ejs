@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment options</title>
+    <%- include('partials/client-fileContainerCss') %>
+
+
+    <!-- google font poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <%- include('partials/client-header') %>
+   
+        <section>
+            <div class="conatiner-fluid">
+                <div class=" faq-cover-img border d-flex align-items-center justify-content-center" style="background-image: url('/material/paymentoptions.jpg');">
+                    <h1>Payment options</h1>
+                </div>
+            </div>
+            <div class="conatiner-fluid">
+                <div class="container ">
+                    <div class="row my-4">
+                        <div class="col-md-3 col-sm-3 col-lg-3 my-3">
+                            <div class="faq-frequent">
+                                <div class="heading ">
+                                    <h3>Payment options</h3>
+                                </div>
+                                <div class="faq-frequent-desc">
+                                
+                                </div>
+                                <div class="company-faqs ">
+                                    <ul class="paymentOptions">
+                                        <li class="one"><a href="faq.html">Frequently asked questions</a></li>
+                                        <li class="two"><a class="active_paymentOption" href="paymentOptions.html">Payment Options</a></li>
+                                        <li class="three"><a href="Termsandcondition.html" >Terms & Conditions</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="faq-search row mx-auto d-flex justify-content-center">
+
+                                <input type="search" class="col-md-9 col-sm-9 col-lg-9 " name="searchFAQ" id="search-faq" placeholder="Search..."> 
+                                
+                                <i class="search col-md-3  col-sm-3 col-lg-3 text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                  </svg>
+                                </i>
+
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-lg-1"></div>
+                        <div class="col-md-8 col-sm-8 col-lg-8 my-5">
+
+                            <div class="FAQ">
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        Do you charge sales tax?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            If you live in Canada, your orders with Scribendi are subject to the Goods and Services Tax (GST) at 5% or the Harmonized Sales Tax (HST) at the rate applicable in your province. If you live in the Province of Quebec, your orders are subject to the GST at 5% and the Quebec Sales Tax (QST) at 9.9975%, and this amount will appear as a separate item in your quote and final invoice.
+
+                                            If you live in Australia, your orders with Scribendi are subject to the Goods and Services Tax (GST) at 10%. This amount will appear as a separate item in your quote and final invoice.
+                                            
+                                            If you live outside of Canada and Australia, Scribendi does not automatically charge sales tax. However, please note that you may be required to self-assess the tax. We recommend that you consult your local accountant for more information.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        Who processes my payment?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            Scribendi uses industry standard (256-bit SSL) or higher encryption for communications between your computer and our site. This is the same strength as cash machines and the best retail stores. When you pay by credit card, your card details are not stored on our servers; the fields where you enter your card credit details are securely served directly to your computer by our payment processor, and your card details are communicated directly to our processor and your issuing bank, over encrypted connections. Scribendi's aim is to ensure with absolute certainty that your work is safe at all times.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        What are your payment options?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            Our preferred method of payment is via credit card: we accept Visa, MasterCard, American Express, Discover, Diners, UnionPay and JCB cards. Scribendi has a secure credit card processing system provided by Stripe. We also accept Maestro cards through PayPal, as well as PayPal payments. For customers in China, we accept Alipay. Registered retail customers and corporate/government/organizational clients can arrange payments via ACH or wire transfer.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        When do I pay for the service?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            You submit your payment information at the same time you place your order. As soon as your payment has been approved, we begin our work. To ensure that there are no delays in processing your order and getting a revised document back to you, please make every effort to provide an accurate word count. We do try to double check this.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        Do you have a minimum order size?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            There is no minimum order size, but we do have a minimum charge of 10 XDR (which is approximately 13.91 USD) to cover administrative costs. If you have several small documents, you might consider putting them all in one order to get the best value for your dollar.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        How will the payment appear on my bill?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            Your payment will be listed on your bill as SCRIBENDI.COM followed by the amount quoted on our site. If necessary, your card issuing bank will convert this amount into your local currency at the current exchange rate.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="faq-questions my-5">
+                                    <div class="question my-4">
+                                        What if I don't have a credit card?
+                                    </div>
+                                    <div class="answer">
+                                        <p>
+                                            We also accept PayPal payments. For customers in China, Alipay can be used. Registered retail customers and corporate/government/organizational clients can arrange payments via ACH or wire transfer. To register, please see our Create an Account page.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        
+                        
+                            
+                           
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+  <%- include('partials/client-footer') %>
+        <%- include('partials/client-fileContainerJs') %>
+
+</body>
+</html>

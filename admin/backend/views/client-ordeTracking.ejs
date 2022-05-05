@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- include('partials/client-fileContainerCss') %>
+    <title>Login Page</title>
+  </head>
+  <body>
+  <%- include('partials/client-header') %>
+      <section>
+        <div class="containeer-fluid "style="height:100vh">
+          <div class="container" style="display:flex;justify-content:center;margin-top:5%">
+                <div class="row  form-container card" style="width:500px">
+                    <h2 class="text-center my-4">Track your order</h2>
+                    <form class="login-form" method="POST" action="">
+            
+                          <div class="form-row ">
+                              <span>Order ID*</span>
+                              <div class="">
+                                  <input type="text"name="orderID" placeholder="refn32jnn4oiio" class="form-ctrl">
+                              </div>
+                          </div>
+                            <div class="form-row ">
+                              <div class="">
+                                  <button type="submit" class="btn-black my-2" >Track</button>
+                              </div>
+                          </div>
+                          
+                      
+                      </form>
+
+                </div>
+            </div>
+        </div>
+  
+                     
+
+      </section>
+  </body>
+  <%- include('partials/client-fileContainerJs') %>
+
+</html>

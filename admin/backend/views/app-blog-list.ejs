@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-scompiler-id="0">
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-categories-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:08 GMT -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Blog list</title>
+        <!-- icon -->
+        <%- include('partials/fileContainerCss') %>
+    </head>
+    <body>
+        <!-- sa-app -->
+        <div class="sa-app sa-app--desktop-sidebar-shown sa-app--mobile-sidebar-hidden sa-app--toolbar-fixed">
+            <!-- sa-app__sidebar -->
+                 <%- include('partials/sidebar.ejs')%>
+            <!-- sa-app__sidebar / end --><!-- sa-app__content -->
+            <div class="sa-app__content">
+                <!-- sa-app__toolbar -->
+                    <%- include('partials/toolbar.ejs')%>
+                <!-- sa-app__toolbar / end --><!-- sa-app__body -->
+                <div id="top" class="sa-app__body">
+                    <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
+                        <div class="container">
+                            <div class="py-5">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col">
+                                        <!-- <nav class="mb-2" aria-label="breadcrumb">
+                                            <ol class="breadcrumb breadcrumb-sa-simple">
+                                                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Categories</li>
+                                            </ol>
+                                        </nav> -->
+                                        <h1 class="h3 m-0">Blogs</h1>
+                                    </div>
+                                    <div class="col-auto d-flex"><a href="/admin/blogs/new-blog" class="btn btn-primary">New blog</a></div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="p-4"><input type="text" placeholder="Start typing to search for Blogs" class="form-control form-control--search mx-auto" id="table-search" /></div>
+                                <div class="sa-divider"></div>
+                                <table class="sa-datatables-init" data-order='[[ 1, "asc" ]]' data-sa-search-input="#table-search">
+                                    <thead>
+                                        <tr>
+                                           
+                                            <th class="min-w-15x">Name</th>
+                                            <th>Author name</th>
+                                            <th>Visibility</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                   
+                              
+                                       
+                                            <% for(let blog of blogs) {%>
+                                                <tr>
+                                                   <td><a class="text-reset"><%- blog.title %></a></td>
+                                                    <td><%- blog.author.name %></td>
+                                                    <td><div class="badge badge-sa-success"><%- blog.visibility.visibility_type %></div></td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-sa-muted btn-sm" type="button" id="category-context-menu-7" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="3" height="13" fill="currentColor">
+                                                                    <path
+                                                                        d="M1.5,8C0.7,8,0,7.3,0,6.5S0.7,5,1.5,5S3,5.7,3,6.5S2.3,8,1.5,8z M1.5,3C0.7,3,0,2.3,0,1.5S0.7,0,1.5,0 S3,0.7,3,1.5S2.3,3,1.5,3z M1.5,10C2.3,10,3,10.7,3,11.5S2.3,13,1.5,13S0,12.3,0,11.5S0.7,10,1.5,10z"
+                                                                    ></path>
+                                                                </svg>
+                                                            </button>
+                                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="category-context-menu-7">
+                                                                <li><a class="dropdown-item"href="/admin/blogs/<%- blog.id %>/edit" >Edit</a></li>
+                                                                <li><a class="dropdown-item" href="#">Duplicate</a></li>
+                                                                <li><a class="dropdown-item" href="#">Add tag</a></li>
+                                                                <li><a class="dropdown-item" href="#">Remove tag</a></li>
+                                                                <li><hr class="dropdown-divider" /></li>
+                                                                <li><a class="dropdown-item text-danger" href="/admin/blogs/<%- blog.id %>/delete">Delete</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                    <% }%>
+                                          
+                                          
+                                      
+                                        
+                                        
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sa-app__body / end --><!-- sa-app__footer -->
+                <%- include('partials/footer.ejs')%>
+                <!-- sa-app__footer / end -->
+            </div>
+            <!-- sa-app__content / end --><!-- sa-app__toasts -->
+            <div class="sa-app__toasts toast-container bottom-0 end-0"></div>
+            <!-- sa-app__toasts / end -->
+        </div>
+        <!-- sa-app / end --><!-- scripts -->
+        <%- include('partials/fileContainerJs') %>
+    </body>
+    <!-- Mirrored from stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/app-categories-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Jan 2022 21:41:08 GMT -->
+</html>
